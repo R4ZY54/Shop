@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRINDSMP Ränge</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background-color: #1a1a1a;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 15px white;
+      display: none;
+    }
+    h1 {
+      text-align: center;
+      text-shadow: 0 0 10px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .button {
+      display: block;
+      text-align: center;
+      margin: 10px auto;
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: white;
+      color: black;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px white;
+      cursor: pointer;
+      border: none;
+    }
+    .button:hover {
+      background-color: #ccc;
+    }
+    #startseite {
+      display: block;
+      text-align: center;
+    }
+    .vip h1 { color: gold; text-shadow: 0 0 10px gold; }
+    .ultra h1 { color: purple; text-shadow: 0 0 10px purple; }
+    .knight h1 { color: white; text-shadow: 0 0 10px white; }
+    .legend h1 { color: red; text-shadow: 0 0 10px red; }
+  </style>
+</head>
+<body>
+
+  <div id="startseite">
+    <h1>GRINDSMP RÄNGE</h1>
+    <button class="button" onclick="showSection('vip')">VIP</button>
+    <button class="button" onclick="showSection('ultra')">ULTRA</button>
+    <button class="button" onclick="showSection('knight')">KNIGHT</button>
+    <button class="button" onclick="showSection('legend')">LEGEND</button>
+  </div>
+
+  <div id="vip" class="container vip">
+    <h1>VIP Rang</h1>
+    <p><strong>Preis:</strong> 5€</p>
+    <ul>
+      <li>Goldene Schrift im Chat</li>
+      <li>1 Minute weniger RTP Cooldown</li>
+      <li>Täglicher VIP Key</li>
+    </ul>
+    <p><strong>Key-Berechtigung:</strong> Nur VIP Key</p>
+    <button class="button" onclick="backToStart()">Zurück zur Startseite</button>
+  </div>
+
+  <div id="ultra" class="container ultra">
+    <h1>ULTRA Rang</h1>
+    <p><strong>Preis:</strong> 7,50€</p>
+    <ul>
+      <li>Lila Schrift im Chat</li>
+      <li>2 Minuten weniger RTP Cooldown</li>
+      <li>Täglicher VIP & ULTRA Key</li>
+    </ul>
+    <p><strong>Key-Berechtigung:</strong> VIP- & ULTRA-Key</p>
+    <button class="button" onclick="backToStart()">Zurück zur Startseite</button>
+  </div>
+
+  <div id="knight" class="container knight">
+    <h1>KNIGHT Rang</h1>
+    <p><strong>Preis:</strong> 10€</p>
+    <ul>
+      <li>Schwarze Schrift im Chat</li>
+      <li>3 Minuten weniger RTP Cooldown</li>
+      <li>Täglicher VIP, ULTRA & KNIGHT Key</li>
+    </ul>
+    <p><strong>Key-Berechtigung:</strong> VIP-, ULTRA- & KNIGHT-Key</p>
+    <button class="button" onclick="backToStart()">Zurück zur Startseite</button>
+  </div>
+
+  <div id="legend" class="container legend">
+    <h1>LEGEND Rang</h1>
+    <p><strong>Preis:</strong> 15€</p>
+    <ul>
+      <li>Hellrote Schrift im Chat</li>
+      <li>4 Minuten weniger RTP Cooldown</li>
+      <li>Täglicher VIP, ULTRA, KNIGHT & LEGEND Key</li>
+    </ul>
+    <p><strong>Key-Berechtigung:</strong> Alle Keys</p>
+    <button class="button" onclick="backToStart()">Zurück zur Startseite</button>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.getElementById("startseite").style.display = "none";
+      document.querySelectorAll('.container').forEach(el => el.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+
+    function backToStart() {
+      document.querySelectorAll('.container').forEach(el => el.style.display = "none");
+      document.getElementById("startseite").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
